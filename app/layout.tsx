@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const poppins = Poppins({subsets:['latin'],variable:'--font-sans' ,weight:['400','500','600','700', '800', '900']});
 
@@ -26,11 +27,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", poppins.variable )}
-    >
-      <body className= {cn("min-h-full", "flex", "flex-col" ,"dark")}>{children}</body>
+    <html lang="en"  suppressHydrationWarning>
+      {/* className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", poppins.variable )} */}
+    
+      <body className= {cn("min-h-full", "flex", "flex-col" )}>
+        <ThemeProvider 
+         attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
+          disableTransitionOnChange
+         >
+         {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
