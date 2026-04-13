@@ -11,7 +11,7 @@ export default function LoggedOutLayout({ children }: Props) {
         {children}
       </div>
 
-      <LightDarkToggle className="fixed  right-0 top-0.5" />
+      <LightDarkToggle className="fixed right-0 top-1/2 -translate-y-1/2" />
     </>
   );
 }

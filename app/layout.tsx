@@ -27,8 +27,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en"  suppressHydrationWarning>
-      {/* className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", poppins.variable )} */}
+    <html lang="en"  suppressHydrationWarning
+      className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", poppins.variable )} >
     
       <body className= {cn("min-h-full", "flex", "flex-col" )}>
         <ThemeProvider 
