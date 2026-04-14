@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { PersonStandingIcon } from "lucide-react";
 import Link from "next/link";
-//rfc homepage
+import LoginPage from "./login/page";
+
 export default function Home() {
   return (
     <>
